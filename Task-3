@@ -1,0 +1,33 @@
+public class BinarySearchExample {
+    public static void main(String[] args) {
+
+        // Step 1: Declare and initialize a sorted array
+        int[] arr = {5, 10, 15, 20, 25, 30};
+        int key = 20;   // Element to search
+
+        int low = 0;
+        int high = arr.length - 1;
+        int mid;
+        boolean found = false;
+
+        // Step 2: Apply Binary Search
+        while (low <= high) {
+            mid = (low + high) / 2;
+
+            if (arr[mid] == key) {
+                System.out.println("Element found at index: " + mid);
+                found = true;
+                break;
+            } else if (arr[mid] < key) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+
+        // Step 3: If element not found
+        if (!found) {
+            System.out.println("Element not found in the array");
+        }
+    }
+}
